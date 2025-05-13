@@ -1,0 +1,9 @@
+# Template configuration: https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/creating-a-default-community-health-file
+
+name: Replicate Codespaces Template
+description: A template repository for developing Replicate models using GitHub Codespaces
+visibility: public
+
+# Template specific settings
+is_template: true
+
