@@ -7,6 +7,9 @@ echo "🚀 Setting up Replicate development environment..."
 echo "📦 Installing Python dependencies..."
 pip install -U pip
 
+# Ensure the bin directory exists
+mkdir -p $HOME/.local/bin
+
 # Install Cog prebuilt binary (v0.14.10) for Linux x86_64
 echo "📦 Downloading Cog v0.14.10 binary..."
 curl -L -o $HOME/.local/bin/cog https://github.com/replicate/cog/releases/download/v0.14.10/cog_Linux_x86_64
