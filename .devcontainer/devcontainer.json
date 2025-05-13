@@ -10,7 +10,9 @@
       "version": "3.10"
     },
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/git-lfs:1": {}
+    "ghcr.io/devcontainers/features/golang:1": {
+      "version": "latest"
+    }
   },
   "customizations": {
     "vscode": {

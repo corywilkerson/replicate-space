@@ -8,17 +8,9 @@ echo "📦 Installing Replicate CLI and Cog..."
 pip install -U pip
 pip install cog
 
-# Initialize git-lfs
-echo "📦 Setting up git-lfs..."
-git lfs install
-
-# Install Replicate CLI from GitHub repo
-echo "📦 Installing Replicate CLI from GitHub..."
-curl -o /tmp/install.sh https://raw.githubusercontent.com/replicate/cli/main/install.sh
-chmod +x /tmp/install.sh
-/tmp/install.sh
-rm /tmp/install.sh
-echo 'export PATH="$HOME/.replicate/bin:$PATH"' >> ~/.bashrc
+# Install Replicate CLI using Go
+echo "📦 Installing Replicate CLI..."
+go install github.com/replicate/cli/cmd/replicate@latest
 
 # Check if requirements.txt exists and install if it does
 if [ -f "requirements.txt" ]; then
