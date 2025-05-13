@@ -4,9 +4,16 @@ set -e
 echo "🚀 Setting up Replicate development environment..."
 
 # Install core dependencies
-echo "📦 Installing Replicate CLI and Cog..."
+echo "📦 Installing Python dependencies..."
 pip install -U pip
-pip install cog
+
+# Install Cog from source
+echo "📦 Installing Cog from source..."
+git clone https://github.com/replicate/cog.git /tmp/cog
+cd /tmp/cog
+make install
+cd -
+rm -rf /tmp/cog
 
 # Install Replicate CLI from source
 echo "📦 Installing Replicate CLI from source..."
