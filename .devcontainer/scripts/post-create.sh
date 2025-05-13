@@ -7,19 +7,12 @@ echo "🚀 Setting up Replicate development environment..."
 echo "📦 Installing Python dependencies..."
 pip install -U pip
 
-# Install uv (required for building Cog)
-echo "📦 Installing uv (required for Cog build)..."
-curl -Ls https://astral.sh/uv/install.sh | sh
+# Install Cog prebuilt binary (v0.14.10) for Linux x86_64
+echo "📦 Downloading Cog v0.14.10 binary..."
+curl -L -o $HOME/.local/bin/cog https://github.com/replicate/cog/releases/download/v0.14.10/cog_Linux_x86_64
+chmod +x $HOME/.local/bin/cog
 export PATH="$HOME/.local/bin:$PATH"
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
-
-# Install Cog from source
-echo "📦 Installing Cog from source..."
-git clone https://github.com/replicate/cog.git /tmp/cog
-cd /tmp/cog
-make install PREFIX=$HOME/.local
-cd -
-rm -rf /tmp/cog
 
 # Install Replicate CLI from source
 echo "📦 Installing Replicate CLI from source..."
