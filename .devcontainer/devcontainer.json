@@ -10,7 +10,7 @@
       "version": "3.10"
     },
     "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/golang:1": {
+    "ghcr.io/devcontainers/features/go:1": {
       "version": "latest"
     }
   },
