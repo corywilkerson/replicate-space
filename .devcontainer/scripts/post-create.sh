@@ -7,6 +7,11 @@ echo "🚀 Setting up Replicate development environment..."
 echo "📦 Installing Python dependencies..."
 pip install -U pip
 
+# Install uv (required for building Cog)
+echo "📦 Installing uv (required for Cog build)..."
+curl -Ls https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+
 # Install Cog from source
 echo "📦 Installing Cog from source..."
 git clone https://github.com/replicate/cog.git /tmp/cog
