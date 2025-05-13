@@ -8,9 +8,14 @@ echo "📦 Installing Replicate CLI and Cog..."
 pip install -U pip
 pip install cog
 
-# Install Replicate CLI using Go
-echo "📦 Installing Replicate CLI..."
-go install github.com/replicate/cli/cmd/replicate@latest
+# Install Replicate CLI from source
+echo "📦 Installing Replicate CLI from source..."
+git clone https://github.com/replicate/cli.git /tmp/replicate-cli
+cd /tmp/replicate-cli
+make
+sudo make install
+cd -
+rm -rf /tmp/replicate-cli
 
 # Check if requirements.txt exists and install if it does
 if [ -f "requirements.txt" ]; then
