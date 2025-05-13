@@ -25,6 +25,10 @@ make install PREFIX=$HOME/.local
 cd -
 rm -rf /tmp/replicate-cli
 
+# Add alias for replicate CLI as r8
+echo 'alias r8="replicate"' >> ~/.bashrc
+alias r8="replicate"
+
 # Check if requirements.txt exists and install if it does
 if [ -f "requirements.txt" ]; then
     echo "📦 Installing requirements from requirements.txt..."
