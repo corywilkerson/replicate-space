@@ -11,12 +11,13 @@ pip install -U pip
 echo "📦 Installing uv (required for Cog build)..."
 curl -Ls https://astral.sh/uv/install.sh | sh
 export PATH="$HOME/.local/bin:$PATH"
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
 
 # Install Cog from source
 echo "📦 Installing Cog from source..."
 git clone https://github.com/replicate/cog.git /tmp/cog
 cd /tmp/cog
-make install
+make install PREFIX=$HOME/.local
 cd -
 rm -rf /tmp/cog
 
@@ -24,8 +25,7 @@ rm -rf /tmp/cog
 echo "📦 Installing Replicate CLI from source..."
 git clone https://github.com/replicate/cli.git /tmp/replicate-cli
 cd /tmp/replicate-cli
-make
-sudo make install
+make install PREFIX=$HOME/.local
 cd -
 rm -rf /tmp/replicate-cli
 
